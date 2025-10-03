@@ -33,11 +33,12 @@ const textContainerStyles = {
   alignItems: 'flex-start',
   textAlign: 'left',
   padding: '1rem',
-  maxWidth: '400px'
+  maxWidth: '400px',
+  marginRight: '3rem'
 };
 
 const rightTextContainerStyles = {
-  flex: 1,
+  flex: 0.5,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -48,26 +49,27 @@ const rightTextContainerStyles = {
 };
 
 const videoContainerStyles = {
-  flex: 1.5,
+  flex: 2,
   maxWidth: '500px',
-  height: '70vh',
+  height: '80vh',
   position: 'relative',
-  borderRadius: '20px',
+  borderRadius: '200px',
   overflow: 'hidden',
   boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8)'
 };
 
 const titleStyles = {
-  fontSize: 'clamp(3rem, 8vw, 4.5rem)',
+  fontSize: '5rem',
   fontWeight: 'bold',
-  lineHeight: '1.1',
+  lineHeight: '1',
   color: 'white',
   textTransform: 'uppercase',
-  marginBottom: '2rem'
+  marginBottom: '3rem',
+  letterSpacing: '2px'
 };
 
 const listItemBase = {
-  fontSize: '1.3rem',
+  fontSize: '2rem',
   lineHeight: '1.7',
   marginTop: '0.8rem',
   transition: 'all 0.8s ease'

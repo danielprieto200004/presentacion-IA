@@ -25,7 +25,7 @@ const titleContainerStyles = {
   flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '2rem'
 };
 const titleStyles = {
-    fontSize: '5rem', fontWeight: 'bold',
+    fontSize: 'clamp(3.5rem, 6vw, 6rem)', fontWeight: 'bold',
     lineHeight: '1.1', color: 'white', textTransform: 'uppercase',
     letterSpacing: '3px'
 };

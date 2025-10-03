@@ -78,18 +78,19 @@ const videoStyles = {
 };
 
 const titleStyles = {
-  fontSize: 'clamp(2.5rem, 6vw, 4rem)',
+  fontSize: '4rem',
   fontWeight: 'bold',
   lineHeight: '1.2',
   color: 'white',
   textTransform: 'uppercase',
   marginBottom: '3rem',
   marginTop: '2rem',
-  wordBreak: 'break-word'
+  wordBreak: 'break-word',
+  letterSpacing: '2px'
 };
 
 const reflectiveTextStyles = {
-  fontSize: 'clamp(1.5rem, 4vw, 2.2rem)',
+  fontSize: '2.2rem',
   color: '#d9f3ff',
   lineHeight: '1.6',
   letterSpacing: '0.5px',

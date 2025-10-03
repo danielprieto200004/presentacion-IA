@@ -67,11 +67,12 @@ const titleContainerStyles = {
 };
 
 const titleStyles = {
-  fontSize: 'clamp(3rem, 8vw, 5.5rem)', 
+  fontSize: '5.5rem', 
   fontWeight: 'bold',
   lineHeight: '1.1', 
   color: 'white', 
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+  letterSpacing: '3px'
 };
 
 // --- NUEVO ESTILO PARA LOS VIDEOS REDONDEADOS ---

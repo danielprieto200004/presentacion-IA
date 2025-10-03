@@ -52,15 +52,16 @@ const contentContainerStyles = {
 };
 
 const titleStyles = {
-  fontSize: 'clamp(3rem, 8vw, 5.5rem)',
+  fontSize: '5.5rem',
   fontWeight: 'bold',
   lineHeight: '1.1',
   color: 'white',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+  letterSpacing: '3px'
 };
 
 const descriptionStyles = {
-  fontSize: 'clamp(1.3rem, 3vw, 1.8rem)',
+  fontSize: '1.8rem',
   color: '#d9f3ff',
   lineHeight: '1.6',
   letterSpacing: '1px',

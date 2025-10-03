@@ -54,13 +54,14 @@ const rightContentStyles = {
 };
 
 const titleStyles = {
-  fontSize: 'clamp(3rem, 7vw, 5rem)',
+  fontSize: '5rem',
   fontWeight: 'bold',
   lineHeight: '1.1',
   color: 'white',
   textTransform: 'uppercase',
   marginBottom: '2rem',
-  maxWidth: '700px'
+  maxWidth: '700px',
+  letterSpacing: '2px'
 };
 
 const imageStyles = {
@@ -72,7 +73,7 @@ const imageStyles = {
 };
 
 const sideTextStyles = {
-  fontSize: 'clamp(1.4rem, 3vw, 2rem)',
+  fontSize: '2rem',
   fontWeight: '300',
   lineHeight: '1.5',
   color: '#d9f3ff',
@@ -96,7 +97,7 @@ const bottomTextStyles = {
   bottom: '2rem',
   left: '30%',
   transform: 'translateX(-50%)',
-  fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)',
+  fontSize: '1.8rem',
   fontWeight: '300',
   color: '#d9f3ff',
   textAlign: 'center',
