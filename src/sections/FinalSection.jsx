@@ -27,18 +27,23 @@ const contentStyles = {
   width: '100%'
 };
 
-const titleStyles = {
+const eventTitleStyles = {
+    color: '#ffffffff',
+    fontSize: 'clamp(1.4rem, 3vw, 2.2rem)',
+    fontWeight: '400',
+    letterSpacing: '2px'
+};
+
+const mainTitleStyles = {
     fontSize: '4rem',
     fontWeight: 'bold',
     letterSpacing: '3px',
     textTransform: 'uppercase',
-    color: 'white',
-    textAlign: 'center',
-    marginBottom: '2rem'
+    color: 'white'
 };
 
 const thanksStyles = {
-    fontSize: '3rem',
+    fontSize: '6rem',
     fontWeight: '300',
     color: '#d9f3ff',
     textAlign: 'center',
@@ -46,46 +51,49 @@ const thanksStyles = {
     letterSpacing: '3px'
 };
 
-const nameStyles = {
-    fontSize: '2rem',
-    fontWeight: 'bold',
-    color: 'white',
-    textAlign: 'center',
-    marginBottom: '1rem'
-};
-
-const roleStyles = {
-    fontSize: '1.4rem',
-    color: '#d9f3ff',
-    textAlign: 'center',
+const authorInfoStyles = {
+    marginTop: '1.5rem',
     lineHeight: '1.6'
 };
 
-const topTitleContainerStyles = {
-    position: 'absolute',
-    top: '2rem',
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    zIndex: 2
+const nameStyles = {
+    fontSize: '2.5rem',
+    fontWeight: 'bold',
+    color: 'white'
+};
+
+const roleStyles = {
+    color: '#ffffffff',
+    fontSize: 'clamp(1.8rem, 3vw, 2.2rem)'
 };
 
 const logoStyles = {
-    height: '120px',
-    opacity: 0.9
+    height: 'clamp(60px, 8vw, 200px)',
+    width: 'auto',
+    opacity: 0.8,
+    maxWidth: '100%'
 };
 
-
 // --- ESTILOS PARA LOS LOGOS ---
-const bottomLogoContainerStyles = {
+const topLogoContainerStyles = {
     position: 'absolute',
-    bottom: '2rem',
+    top: 'clamp(1rem, 3vw, 2rem)',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
-    gap: '3rem',
-    zIndex: 2
+    zIndex: 2,
+    padding: '0 1rem'
+};
+
+
+const bottomLogoContainerStyles = {
+    position: 'absolute',
+    bottom: 'clamp(1rem, 3vw, 2rem)',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    zIndex: 2,
+    padding: '0 1rem'
 };
 
 export const FinalSection = ({ onNextSlide, onPrevSlide }) => {
@@ -99,17 +107,14 @@ export const FinalSection = ({ onNextSlide, onPrevSlide }) => {
     >
       <LaserFlowBackground />
       
-      {/* Título arriba */}
-      <motion.div
-        style={topTitleContainerStyles}
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        <h1 style={titleStyles}>LEARNING DRIVEN BY IA</h1>
-      </motion.div>
-      
+      {/* Contenedor para el logo de Symbiotic ARRIBA */}
+      <div style={topLogoContainerStyles}>
+        <img src="/logo-symbiotic.png" alt="Logo Symbiotic" style={logoStyles} />
+      </div>
+
       <div style={contentStyles}>
+        <h1 style={mainTitleStyles}>Learning Driven By IA</h1>
+        
         <motion.p
           style={thanksStyles}
           initial={{ opacity: 0, scale: 0.8 }}
@@ -119,40 +124,17 @@ export const FinalSection = ({ onNextSlide, onPrevSlide }) => {
           ¡Gracias!
         </motion.p>
         
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
+        <div style={authorInfoStyles}>
           <p style={nameStyles}>Daniel Mateo Prieto</p>
-          <p style={roleStyles}>Analista de datos Vicerrectoría Académica BCB</p>
-        </motion.div>
+          <p style={roleStyles}>Profesional en Data Analytics Vicerrectoría Académica BCB</p>
+          <p style={roleStyles}>Manager, UNIMINUTO Symbiotic</p>
+        </div>
       </div>
 
-      {/* Contenedor para ambos logos ABAJO uno al lado del otro */}
-      <motion.div
-        style={bottomLogoContainerStyles}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.1 }}
-      >
-        <motion.img
-          src="/logo-symbiotic.png"
-          alt="Logo Symbiotic"
-          style={logoStyles}
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 1.3 }}
-        />
-        <motion.img
-          src="/logo-uniminuto.png"
-          alt="Logo UNIMINUTO"
-          style={logoStyles}
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 1.5 }}
-        />
-      </motion.div>
+      {/* Contenedor para el logo de Uniminuto ABAJO */}
+      <div style={bottomLogoContainerStyles}>
+        <img src="/logo-uniminuto.png" alt="Logo UNIMINUTO" style={logoStyles} />
+      </div>
     </motion.section>
   );
 };

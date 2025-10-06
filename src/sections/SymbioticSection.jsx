@@ -63,7 +63,7 @@ const titleContainerStyles = {
   display: 'flex', 
   justifyContent: 'center', 
   alignItems: 'center', 
-  padding: '2rem'
+  padding: '4rem'
 };
 
 const titleStyles = {
@@ -78,8 +78,8 @@ const titleStyles = {
 // --- NUEVO ESTILO PARA LOS VIDEOS REDONDEADOS ---
 const projectVideoStyles = {
   position: 'absolute',
-  maxWidth: '80%',
-  maxHeight: '70%',
+  maxWidth: '100%',
+  maxHeight: '100%',
   borderRadius: '15px',
   boxShadow: '0 10px 40px rgba(0,0,0,0.8)',
   objectFit: 'cover'
@@ -127,7 +127,7 @@ export const SymbioticSection = ({ onNextSlide, onPrevSlide }) => {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.5 }}
               autoPlay
-              muted={projectIndex !== 3} // Solo el video de WhatsApp (índice 3) tendrá audio
+              muted
               loop
               playsInline
               ref={(video) => {
@@ -141,9 +141,20 @@ export const SymbioticSection = ({ onNextSlide, onPrevSlide }) => {
       </div>
 
       <motion.div style={titleContainerStyles} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }}>
-        <h1 style={titleStyles}>
-          <BlurText text="IA APLICADA A PROBLEMAS REALES DESDE SYMBIOTIC" variant="large" />
-        </h1>
+        <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center', flexDirection: 'column' }}>
+          <h1 style={titleStyles}>
+            <BlurText text="IA APLICADA A PROBLEMAS REALES DESDE" variant="large" />
+          </h1>
+          <img 
+            src="/logo-symbiotic.png" 
+            alt="Symbiotic Logo" 
+            style={{
+              height: '300px',
+              width: 'auto',
+              objectFit: 'contain'
+            }}
+          />
+        </div>
       </motion.div>
     </section>
   );

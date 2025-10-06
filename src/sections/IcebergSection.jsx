@@ -38,24 +38,26 @@ const textContainerStyles = {
 };
 
 const rightTextContainerStyles = {
-  flex: 0.5,
+  flex: 0,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'flex-start',
   textAlign: 'left',
   padding: '1rem',
-  maxWidth: '400px'
+  width: '450px',
+  minWidth: '450px'
 };
 
 const videoContainerStyles = {
-  flex: 2,
-  maxWidth: '500px',
-  height: '80vh',
+  flex: '0 0 500px',
+  width: '500px',
+  height: '75vh',
   position: 'relative',
-  borderRadius: '200px',
+  borderRadius: '50px',
   overflow: 'hidden',
-  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8)'
+  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8)',
+  margin: '0 1rem'
 };
 
 const titleStyles = {
@@ -69,7 +71,7 @@ const titleStyles = {
 };
 
 const listItemBase = {
-  fontSize: '2rem',
+  fontSize: '2.8rem',
   lineHeight: '1.7',
   marginTop: '0.8rem',
   transition: 'all 0.8s ease'
@@ -175,7 +177,7 @@ export const IcebergSection = ({ onNextSlide, onPrevSlide }) => {
                   ...listItemBase,
                   color: style.color,
                   textShadow: style.glow,
-                  fontSize: "2rem",
+                  fontSize: "2.8rem",
                   fontWeight: index === 0 ? "bold" : "normal",
                   whiteSpace: "nowrap"
                 }}

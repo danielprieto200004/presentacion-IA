@@ -41,7 +41,8 @@ const centerContentStyles = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  flex: '1'
+  flex: '1',
+  minHeight: '80vh'
 };
 
 const rightContentStyles = {
@@ -49,7 +50,7 @@ const rightContentStyles = {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'flex-start',
-  maxWidth: '500px',
+  maxWidth: '900px',
   flex: '0 0 auto'
 };
 
@@ -65,11 +66,11 @@ const titleStyles = {
 };
 
 const imageStyles = {
-  width: '400px',
+  width: '600px',
   height: 'auto',
-  borderRadius: '10px',
-  boxShadow: '0 10px 40px rgba(0,0,0,0.8)',
-  filter: 'drop-shadow(0 0 10px rgb(88, 109, 75))'
+  borderRadius: '15px',
+  boxShadow: '0 15px 50px rgba(0,0,0,0.8)',
+  filter: 'drop-shadow(0 0 15px rgb(88, 109, 75))'
 };
 
 const sideTextStyles = {
@@ -78,26 +79,26 @@ const sideTextStyles = {
   lineHeight: '1.5',
   color: '#d9f3ff',
   textAlign: 'left',
-  maxWidth: '600px',
+  maxWidth: '900px',
   letterSpacing: '0.5px',
   marginBottom: '2rem'
 };
 
 const videoStyles = {
   width: '100%',
-  maxWidth: '600px',
+  maxWidth: '800px',
   height: 'auto',
-  borderRadius: '10px',
-  boxShadow: '0 10px 40px rgba(0,0,0,0.8)',
-  filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.2))'
+  borderRadius: '15px',
+  boxShadow: '0 15px 50px rgba(0,0,0,0.8)',
+  filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.2))'
 };
 
 const bottomTextStyles = {
   position: 'absolute',
-  bottom: '2rem',
+  bottom: '7rem',
   left: '30%',
   transform: 'translateX(-50%)',
-  fontSize: '1.8rem',
+  fontSize: '2.8rem',
   fontWeight: '300',
   color: '#d9f3ff',
   textAlign: 'center',
@@ -184,17 +185,8 @@ export const VibecodingSection = ({ onNextSlide, onPrevSlide }) => {
           />
         </div>
 
-        {/* Lado derecho: Texto y Video */}
+        {/* Lado derecho: Video y Texto */}
         <div style={rightContentStyles}>
-          <motion.p
-            style={sideTextStyles}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
-            Pero de nada sirve tener la mejor estrategia y la IA más potente si la experiencia de usarla es frustrante. La forma en que interactuamos con esta inteligencia es la última pieza del rompecabezas.
-          </motion.p>
-          
           <motion.video
             src="/codigo.mp4"
             autoPlay
@@ -204,8 +196,17 @@ export const VibecodingSection = ({ onNextSlide, onPrevSlide }) => {
             style={videoStyles}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
           />
+          
+          <motion.p
+            style={sideTextStyles}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 1.5 }}
+          >
+            Pero de nada sirve tener la mejor estrategia y la IA más potente si la experiencia de usarla es frustrante. La forma en que interactuamos con esta inteligencia es la última pieza del rompecabezas.
+          </motion.p>
         </div>
       </motion.div>
 

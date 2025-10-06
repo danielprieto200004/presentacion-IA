@@ -24,7 +24,7 @@ const contentContainerStyles = {
 };
 
 const titleStyles = {
-  fontSize: '4.5rem',
+  fontSize: '6.5rem',
   fontWeight: 'bold',
   lineHeight: '1.1',
   color: 'white',
@@ -34,7 +34,7 @@ const titleStyles = {
 };
 
 const questionStyles = {
-  fontSize: '3.5rem',
+  fontSize: '5.2rem',
   fontWeight: '300',
   lineHeight: '1.2',
   color: '#ffffff',

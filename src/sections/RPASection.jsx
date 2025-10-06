@@ -25,7 +25,7 @@ const backgroundContainerStyles = {
 };
 
 const videoContainerStyles = {
-  flex: 1,
+  flex: '0 0 50%',
   height: '100vh',
   position: 'relative',
   display: 'flex',
@@ -35,15 +35,15 @@ const videoContainerStyles = {
 };
 
 const videoStyles = {
-  maxWidth: '80%',
-  maxHeight: '70%',
+  maxWidth: '95%',
+  maxHeight: '85%',
   borderRadius: '15px',
   boxShadow: '0 10px 40px rgba(0,0,0,0.8)',
   objectFit: 'cover'
 };
 
 const contentContainerStyles = {
-  flex: 1,
+  flex: '0 0 50%',
   display: 'flex',
   justifyContent: 'flex-start',
   alignItems: 'center',
@@ -61,10 +61,10 @@ const titleStyles = {
 };
 
 const descriptionStyles = {
-  fontSize: '1.8rem',
+  fontSize: '3rem',
   color: '#d9f3ff',
-  lineHeight: '1.6',
-  letterSpacing: '1px',
+  lineHeight: '1.5',
+  letterSpacing: '0.5px',
   maxWidth: '600px',
   textAlign: 'left'
 };
