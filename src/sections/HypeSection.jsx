@@ -45,13 +45,13 @@ export const HypeSection = ({ onNextSlide, onPrevSlide }) => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'ArrowRight') {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
         if (cardIndex < cardsData.length - 1) {
           setCardIndex(prev => prev + 1);
         } else {
           onNextSlide(); // Llama a la función para pasar a la siguiente diapositiva principal
         }
-      } else if (event.key === 'ArrowLeft') {
+      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
         if (cardIndex > -1) {
           setCardIndex(prev => prev - 1);
         } else {

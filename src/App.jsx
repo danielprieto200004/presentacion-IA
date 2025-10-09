@@ -24,20 +24,39 @@ function App() {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
+      // Solo manejar flechas izquierda y derecha para slides simples
+      // Las flechas arriba y abajo las manejan las secciones individuales
       if (event.key === 'ArrowRight') {
+        // Solo para slides que no tienen navegación interna
         if (currentSlide === 0) {
           nextSlide();
         }
-        // Las secciones 1, 2, 5, 6 y 7 manejan su propia navegación interna
-        // Las secciones 3 y 4 usan navegación simple
-        if (currentSlide === 3 || currentSlide === 4) {
+        else if (currentSlide === 3 || currentSlide === 4 || currentSlide === 5) {
           nextSlide();
         }
-      } else if (event.key === 'ArrowLeft') {
-        if (currentSlide > 0 && currentSlide !== 1 && currentSlide !== 2 && currentSlide !== 5 && currentSlide !== 6 && currentSlide !== 7) {
+      }
+      else if (event.key === 'ArrowLeft') {
+        // Solo para slides que no tienen navegación interna
+        if (currentSlide > 0 && currentSlide !== 1 && currentSlide !== 2 && currentSlide !== 6 && currentSlide !== 7) {
           prevSlide();
         }
-        // Las secciones 1, 2, 5, 6 y 7 manejan su propia navegación interna
+      }
+      // Las flechas arriba y abajo las manejan las secciones individuales
+      // Solo agregar soporte para flechas arriba/abajo en slides simples
+      else if (event.key === 'ArrowUp') {
+        // Solo para slides que no tienen navegación interna
+        if (currentSlide === 0) {
+          nextSlide();
+        }
+        else if (currentSlide === 3 || currentSlide === 4 || currentSlide === 5) {
+          nextSlide();
+        }
+      }
+      else if (event.key === 'ArrowDown') {
+        // Solo para slides que no tienen navegación interna
+        if (currentSlide > 0 && currentSlide !== 1 && currentSlide !== 2 && currentSlide !== 6 && currentSlide !== 7) {
+          prevSlide();
+        }
       }
     };
 

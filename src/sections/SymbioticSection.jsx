@@ -91,13 +91,13 @@ export const SymbioticSection = ({ onNextSlide, onPrevSlide }) => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'ArrowRight') {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
         if (projectIndex < projectsData.length - 1) {
           setProjectIndex(prev => prev + 1);
         } else {
           onNextSlide();
         }
-      } else if (event.key === 'ArrowLeft') {
+      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
         if (projectIndex > -1) {
           setProjectIndex(prev => prev - 1);
         } else {

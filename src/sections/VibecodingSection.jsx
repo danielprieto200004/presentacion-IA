@@ -73,16 +73,7 @@ const imageStyles = {
   filter: 'drop-shadow(0 0 15px rgb(88, 109, 75))'
 };
 
-const sideTextStyles = {
-  fontSize: '2rem',
-  fontWeight: '300',
-  lineHeight: '1.5',
-  color: '#d9f3ff',
-  textAlign: 'left',
-  maxWidth: '900px',
-  letterSpacing: '0.5px',
-  marginBottom: '2rem'
-};
+// Estilos de texto lateral removidos
 
 const videoStyles = {
   width: '100%',
@@ -112,13 +103,13 @@ export const VibecodingSection = ({ onNextSlide, onPrevSlide }) => {
   const [showBottomText, setShowBottomText] = useState(false);
 
   const handleKeyDown = useCallback((event) => {
-    if (event.key === 'ArrowRight') {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
       if (!showBottomText) {
         setShowBottomText(true);
       } else {
         onNextSlide();
       }
-    } else if (event.key === 'ArrowLeft') {
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
       if (showBottomText) {
         setShowBottomText(false);
       } else {
@@ -165,7 +156,7 @@ export const VibecodingSection = ({ onNextSlide, onPrevSlide }) => {
         <div style={leftContentStyles}>
           <h1 style={titleStyles}>
             <BlurText
-              text="La Frontera Final: La Experiencia"
+              text="La Experiencia"
               animateBy="words"
               delay={150}
               direction="top"
@@ -199,14 +190,6 @@ export const VibecodingSection = ({ onNextSlide, onPrevSlide }) => {
             transition={{ duration: 0.8, delay: 1.2 }}
           />
           
-          <motion.p
-            style={sideTextStyles}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
-          >
-            Pero de nada sirve tener la mejor estrategia y la IA más potente si la experiencia de usarla es frustrante. La forma en que interactuamos con esta inteligencia es la última pieza del rompecabezas.
-          </motion.p>
         </div>
       </motion.div>
 

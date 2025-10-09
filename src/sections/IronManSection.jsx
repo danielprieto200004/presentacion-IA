@@ -20,13 +20,7 @@ const ironManVideos = [
   }
 ];
 
-// --- Contenido reflexivo ---
-const reflectiveContent = [
-  "Pero hay algo fundamental que no puede hacer por sí solo.",
-  "No puede tener intención estratégica.",
-  "No tiene curiosidad humana.",
-  "No sabe cuál es el siguiente gran problema que vale la pena resolver."
-];
+// --- Contenido reflexivo (removido) ---
 
 // --- Estilos (igual que RPASection) ---
 const sectionStyles = {
@@ -90,42 +84,24 @@ const titleStyles = {
   letterSpacing: '2px'
 };
 
-const reflectiveTextStyles = {
-  fontSize: '4rem',
-  color: '#d9f3ff',
-  lineHeight: '1.5',
-  letterSpacing: '0.5px',
-  textAlign: 'left',
-  fontStyle: 'italic',
-  maxWidth: '1000px',
-  fontWeight: '300'
-};
+// Estilos de texto reflexivo removidos
 
 
 // --- Componente ---
 export const IronManSection = ({ onNextSlide, onPrevSlide }) => {
-  const [reflectionIndex, setReflectionIndex] = useState(-1);
-
+  // Navegación simplificada - solo avanza/retrocede
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'ArrowRight') {
-        if (reflectionIndex < reflectiveContent.length - 1) {
-          setReflectionIndex(prev => prev + 1);
-        } else {
-          onNextSlide?.();
-        }
-      } else if (event.key === 'ArrowLeft') {
-        if (reflectionIndex > -1) {
-          setReflectionIndex(prev => prev - 1);
-        } else {
-          onPrevSlide?.();
-        }
+      if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
+        onNextSlide?.();
+      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
+        onPrevSlide?.();
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [reflectionIndex, onNextSlide, onPrevSlide]);
+  }, [onNextSlide, onPrevSlide]);
 
   return (
     <motion.section
@@ -185,21 +161,6 @@ export const IronManSection = ({ onNextSlide, onPrevSlide }) => {
               direction="top"
             />
           </h1>
-          
-          <AnimatePresence mode="wait">
-            {reflectionIndex >= 0 && (
-              <motion.p
-                key={reflectionIndex}
-                style={reflectiveTextStyles}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-              >
-                {reflectiveContent[reflectionIndex]}
-              </motion.p>
-            )}
-          </AnimatePresence>
         </div>
       </motion.div>
     </motion.section>
