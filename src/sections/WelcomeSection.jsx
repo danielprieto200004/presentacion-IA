@@ -45,13 +45,15 @@ const authorInfoStyles = {
     lineHeight: '1.6'
 };
 const nameStyles = {
-    fontSize: '1.8rem',
+    fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
     fontWeight: 'bold',
-    color: 'white'
+    color: 'white',
+    marginBottom: '0.5rem'
 };
 const roleStyles = {
     color: '#ffffffff',
-    fontSize: 'clamp(1.4rem, 2.5vw, 1.8rem)'
+    fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
+    marginBottom: '0.3rem'
 };
 const logoStyles = {
     height: 'clamp(60px, 8vw, 200px)',

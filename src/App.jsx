@@ -8,8 +8,9 @@ import { IronManSection } from './sections/IronManSection';
 import { VibecodingSection } from './sections/VibecodingSection';
 import { SymbioticSection } from './sections/SymbioticSection';
 import { FinalSection } from './sections/FinalSection';
+import { HyperspeedSection } from './sections/HyperspeedSection'; // 🚀 nueva sección
 
-const totalSlides = 9;
+const totalSlides = 10; // aumentamos a 10 para incluir la nueva
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -24,36 +25,17 @@ function App() {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      // Solo manejar flechas izquierda y derecha para slides simples
-      // Las flechas arriba y abajo las manejan las secciones individuales
       if (event.key === 'ArrowRight') {
-        // Solo para slides que no tienen navegación interna
-        if (currentSlide === 0) {
-          nextSlide();
-        }
-        else if (currentSlide === 3 || currentSlide === 4 || currentSlide === 5) {
-          nextSlide();
-        }
-      }
-      else if (event.key === 'ArrowLeft') {
-        // Solo para slides que no tienen navegación interna
+        if (currentSlide === 0) nextSlide();
+        else if (currentSlide === 3 || currentSlide === 4 || currentSlide === 5) nextSlide();
+      } else if (event.key === 'ArrowLeft') {
         if (currentSlide > 0 && currentSlide !== 1 && currentSlide !== 2 && currentSlide !== 6 && currentSlide !== 7) {
           prevSlide();
         }
-      }
-      // Las flechas arriba y abajo las manejan las secciones individuales
-      // Solo agregar soporte para flechas arriba/abajo en slides simples
-      else if (event.key === 'ArrowUp') {
-        // Solo para slides que no tienen navegación interna
-        if (currentSlide === 0) {
-          nextSlide();
-        }
-        else if (currentSlide === 3 || currentSlide === 4 || currentSlide === 5) {
-          nextSlide();
-        }
-      }
-      else if (event.key === 'ArrowDown') {
-        // Solo para slides que no tienen navegación interna
+      } else if (event.key === 'ArrowUp') {
+        if (currentSlide === 0) nextSlide();
+        else if (currentSlide === 3 || currentSlide === 4 || currentSlide === 5) nextSlide();
+      } else if (event.key === 'ArrowDown') {
         if (currentSlide > 0 && currentSlide !== 1 && currentSlide !== 2 && currentSlide !== 6 && currentSlide !== 7) {
           prevSlide();
         }
@@ -84,6 +66,7 @@ function App() {
         return <VibecodingSection onNextSlide={nextSlide} onPrevSlide={prevSlide} />;
       case 8:
         return <FinalSection onNextSlide={nextSlide} onPrevSlide={prevSlide} />;
+      
       default:
         return <WelcomeSection onStart={nextSlide} />;
     }

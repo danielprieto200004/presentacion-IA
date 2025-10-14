@@ -1109,6 +1109,7 @@ const Hyperspeed = ({
       appRef.current = myApp;
       myApp.loadAssets().then(myApp.init);
     })();
+// --- GRABACIÓN AUTOMÁTICA REMOVIDA ---
 
     return () => {
       if (appRef.current) {

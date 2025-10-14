@@ -35,7 +35,7 @@ const videoContainerStyles = {
 };
 
 const videoStyles = {
-  maxWidth: '95%',
+  maxWidth: '100%',
   maxHeight: '85%',
   borderRadius: '15px',
   boxShadow: '0 10px 40px rgba(0,0,0,0.8)',
@@ -130,14 +130,6 @@ export const RPASection = () => {
             />
           </h1>
           
-          <motion.p
-            style={descriptionStyles}
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.2, ease: 'easeOut' }}
-          >
-            Un sistema inteligente que los reconozca, los procese y te entregue un resultado consolidado
-          </motion.p>
         </div>
       </motion.div>
     </motion.section>

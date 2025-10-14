@@ -25,12 +25,6 @@ const projectsData = [
     videoSrc: "/querychat.mp4" // Reemplazar con video real
   },
   { 
-    id: 4, 
-    title: "AGENTE DE WHATSAPP",
-    description: "Bot conversacional para atención estudiantil",
-    videoSrc: "/agente-whatsapp.mp4" // Reemplazar con video real
-  },
-  { 
     id: 5, 
     title: "ENCUESTAS ADN ESTUDIANTIL",
     description: "Análisis predictivo del perfil estudiantil",

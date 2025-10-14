@@ -32,10 +32,13 @@ const titleStyles = {
 // --- NUEVO ESTILO PARA LAS TARJETAS REDONDEADAS ---
 const cardImageStyles = {
   position: 'absolute',
-  maxWidth: '80%',
-  maxHeight: '70%',
+  width: '90%',
+  height: '90%',
+  maxWidth: '100%',
+  maxHeight: '90%',
   borderRadius: '15px', // <-- Bordes redondeados
-  boxShadow: '0 10px 40px rgba(0,0,0,0.8)'
+  boxShadow: '0 10px 40px rgba(0,0,0,0.8)',
+  objectFit: 'contain'
 };
 
 // --- Componente ---
