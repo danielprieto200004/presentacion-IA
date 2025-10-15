@@ -39,7 +39,8 @@ const mainTitleStyles = {
     fontWeight: 'bold',
     letterSpacing: '3px',
     textTransform: 'uppercase',
-    color: 'white'
+    color: 'white',
+    marginTop: '6rem'
 };
 
 const thanksStyles = {
@@ -47,6 +48,7 @@ const thanksStyles = {
     fontWeight: '300',
     color: '#d9f3ff',
     textAlign: 'center',
+    marginTop: '1rem',
     marginBottom: '2rem',
     letterSpacing: '3px'
 };
@@ -77,7 +79,7 @@ const logoStyles = {
 // --- ESTILOS PARA LOS LOGOS ---
 const topLogoContainerStyles = {
     position: 'absolute',
-    top: 'clamp(1rem, 3vw, 2rem)',
+    top: 'clamp(0.2rem, 2vw, 1rem)',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
@@ -94,6 +96,30 @@ const bottomLogoContainerStyles = {
     justifyContent: 'center',
     zIndex: 2,
     padding: '0 1rem'
+};
+
+const qrContainerStyles = {
+    marginTop: '3rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1.5rem'
+};
+
+const qrStyles = {
+    width: 'clamp(180px, 20vw, 280px)',
+    height: 'auto',
+    borderRadius: '15px',
+    boxShadow: '0 15px 40px rgba(0, 0, 0, 0.6)',
+    filter: 'drop-shadow(0 0 15px rgba(255, 255, 255, 0.2))'
+};
+
+const qrTextStyles = {
+    fontSize: 'clamp(1rem, 2vw, 1.4rem)',
+    color: '#d9f3ff',
+    textAlign: 'center',
+    letterSpacing: '1px',
+    opacity: 0.9
 };
 
 export const FinalSection = ({ onNextSlide, onPrevSlide }) => {
@@ -124,11 +150,22 @@ export const FinalSection = ({ onNextSlide, onPrevSlide }) => {
           ¡Gracias!
         </motion.p>
         
-        <div style={authorInfoStyles}>
-          <p style={nameStyles}>Daniel Mateo Prieto</p>
-          <p style={roleStyles}>Profesional en Data Analytics Vicerrectoría Académica BCB</p>
-          <p style={roleStyles}>Manager, UNIMINUTO Symbiotic</p>
-        </div>
+        {/* QR Code */}
+        <motion.div
+          style={qrContainerStyles}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <img 
+            src="/QR.jpg" 
+            alt="QR Code" 
+            style={qrStyles}
+          />
+          <p style={qrTextStyles}>
+            Escanea para conocer todos los Desarrollos Symbiotic
+          </p>
+        </motion.div>
       </div>
 
       {/* Contenedor para el logo de Uniminuto ABAJO */}
