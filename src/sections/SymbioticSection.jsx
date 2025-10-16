@@ -85,13 +85,28 @@ export const SymbioticSection = ({ onNextSlide, onPrevSlide }) => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
+      // Teclas para avanzar (clicker remoto y teclado)
+      if (event.key === 'ArrowRight' || 
+          event.key === 'ArrowUp' || 
+          event.key === ' ' || // Espacio
+          event.key === 'Space' ||
+          event.key === 'PageDown' ||
+          event.key === 'Enter' ||
+          event.key === 'n' || 
+          event.key === 'N') {
         if (projectIndex < projectsData.length - 1) {
           setProjectIndex(prev => prev + 1);
         } else {
           onNextSlide();
         }
-      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
+      } 
+      // Teclas para retroceder (clicker remoto y teclado)
+      else if (event.key === 'ArrowLeft' || 
+               event.key === 'ArrowDown' ||
+               event.key === 'PageUp' ||
+               event.key === 'Escape' ||
+               event.key === 'p' || 
+               event.key === 'P') {
         if (projectIndex > -1) {
           setProjectIndex(prev => prev - 1);
         } else {

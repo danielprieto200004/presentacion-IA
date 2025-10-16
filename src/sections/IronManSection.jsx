@@ -89,12 +89,41 @@ const titleStyles = {
 
 // --- Componente ---
 export const IronManSection = ({ onNextSlide, onPrevSlide }) => {
+  const handleClick = (event) => {
+    // Si se hace clic en la mitad derecha de la pantalla, avanza
+    // Si se hace clic en la mitad izquierda, retrocede
+    const rect = event.currentTarget.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const middleX = rect.width / 2;
+    
+    if (clickX > middleX) {
+      onNextSlide?.();
+    } else {
+      onPrevSlide?.();
+    }
+  };
+
   // Navegación simplificada - solo avanza/retrocede
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
+      // Teclas para avanzar (clicker remoto y teclado)
+      if (event.key === 'ArrowRight' || 
+          event.key === 'ArrowUp' || 
+          event.key === ' ' || // Espacio
+          event.key === 'Space' ||
+          event.key === 'PageDown' ||
+          event.key === 'Enter' ||
+          event.key === 'n' || 
+          event.key === 'N') {
         onNextSlide?.();
-      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
+      } 
+      // Teclas para retroceder (clicker remoto y teclado)
+      else if (event.key === 'ArrowLeft' || 
+               event.key === 'ArrowDown' ||
+               event.key === 'PageUp' ||
+               event.key === 'Escape' ||
+               event.key === 'p' || 
+               event.key === 'P') {
         onPrevSlide?.();
       }
     };

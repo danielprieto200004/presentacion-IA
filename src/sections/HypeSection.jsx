@@ -48,13 +48,28 @@ export const HypeSection = ({ onNextSlide, onPrevSlide }) => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
+      // Teclas para avanzar (clicker remoto y teclado)
+      if (event.key === 'ArrowRight' || 
+          event.key === 'ArrowUp' || 
+          event.key === ' ' || // Espacio
+          event.key === 'Space' ||
+          event.key === 'PageDown' ||
+          event.key === 'Enter' ||
+          event.key === 'n' || 
+          event.key === 'N') {
         if (cardIndex < cardsData.length - 1) {
           setCardIndex(prev => prev + 1);
         } else {
           onNextSlide(); // Llama a la función para pasar a la siguiente diapositiva principal
         }
-      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
+      } 
+      // Teclas para retroceder (clicker remoto y teclado)
+      else if (event.key === 'ArrowLeft' || 
+               event.key === 'ArrowDown' ||
+               event.key === 'PageUp' ||
+               event.key === 'Escape' ||
+               event.key === 'p' || 
+               event.key === 'P') {
         if (cardIndex > -1) {
           setCardIndex(prev => prev - 1);
         } else {

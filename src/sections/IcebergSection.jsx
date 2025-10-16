@@ -103,8 +103,15 @@ export const IcebergSection = ({ onNextSlide, onPrevSlide }) => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      // Flechas derecha y arriba = avanzar
-      if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
+      // Teclas para avanzar (clicker remoto y teclado)
+      if (event.key === 'ArrowRight' || 
+          event.key === 'ArrowUp' || 
+          event.key === ' ' || // Espacio
+          event.key === 'Space' ||
+          event.key === 'PageDown' ||
+          event.key === 'Enter' ||
+          event.key === 'n' || 
+          event.key === 'N') {
         if (visibleCount < icebergItems.length) {
           setVisibleCount(prev => Math.min(prev + 1, icebergItems.length));
         } else if (!highlightRPA) {
@@ -113,8 +120,13 @@ export const IcebergSection = ({ onNextSlide, onPrevSlide }) => {
           onNextSlide?.();
         }
       } 
-      // Flechas izquierda y abajo = retroceder
-      else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
+      // Teclas para retroceder (clicker remoto y teclado)
+      else if (event.key === 'ArrowLeft' || 
+               event.key === 'ArrowDown' ||
+               event.key === 'PageUp' ||
+               event.key === 'Escape' ||
+               event.key === 'p' || 
+               event.key === 'P') {
         if (highlightRPA) {
           setHighlightRPA(false);
         } else if (visibleCount > 1) {

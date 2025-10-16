@@ -158,7 +158,15 @@ export const VibecodingSection = ({ onNextSlide, onPrevSlide }) => {
   const reflectionImages = ['/zootopia1.png', '/zootopia2.png', '/zootopia3.png'];
 
   const handleKeyDown = useCallback((event) => {
-    if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
+    // Teclas para avanzar (clicker remoto y teclado)
+    if (event.key === 'ArrowRight' || 
+        event.key === 'ArrowUp' || 
+        event.key === ' ' || // Espacio
+        event.key === 'Space' ||
+        event.key === 'PageDown' ||
+        event.key === 'Enter' ||
+        event.key === 'n' || 
+        event.key === 'N') {
       if (!showReflection) {
         setShowReflection(true);
       } else if (!showReflectionText) {
@@ -166,7 +174,14 @@ export const VibecodingSection = ({ onNextSlide, onPrevSlide }) => {
       } else {
         onNextSlide();
       }
-    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
+    } 
+    // Teclas para retroceder (clicker remoto y teclado)
+    else if (event.key === 'ArrowLeft' || 
+             event.key === 'ArrowDown' ||
+             event.key === 'PageUp' ||
+             event.key === 'Escape' ||
+             event.key === 'p' || 
+             event.key === 'P') {
       if (showReflectionText) {
         setShowReflectionText(false);
       } else if (showReflection) {

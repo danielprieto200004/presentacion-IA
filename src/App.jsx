@@ -9,6 +9,7 @@ import { VibecodingSection } from './sections/VibecodingSection';
 import { SymbioticSection } from './sections/SymbioticSection';
 import { FinalSection } from './sections/FinalSection';
 import { HyperspeedSection } from './sections/HyperspeedSection'; // 🚀 nueva sección
+import ClickerInstructions from './components/ClickerInstructions';
 
 const totalSlides = 10; // aumentamos a 10 para incluir la nueva
 
@@ -25,17 +26,25 @@ function App() {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'ArrowRight') {
+      // Teclas para avanzar (clicker remoto y teclado)
+      if (event.key === 'ArrowRight' || 
+          event.key === 'ArrowUp' || 
+          event.key === ' ' || // Espacio
+          event.key === 'Space' ||
+          event.key === 'PageDown' ||
+          event.key === 'Enter' ||
+          event.key === 'n' || 
+          event.key === 'N') {
         if (currentSlide === 0) nextSlide();
         else if (currentSlide === 3 || currentSlide === 4 || currentSlide === 5) nextSlide();
-      } else if (event.key === 'ArrowLeft') {
-        if (currentSlide > 0 && currentSlide !== 1 && currentSlide !== 2 && currentSlide !== 6 && currentSlide !== 7) {
-          prevSlide();
-        }
-      } else if (event.key === 'ArrowUp') {
-        if (currentSlide === 0) nextSlide();
-        else if (currentSlide === 3 || currentSlide === 4 || currentSlide === 5) nextSlide();
-      } else if (event.key === 'ArrowDown') {
+      } 
+      // Teclas para retroceder (clicker remoto y teclado)
+      else if (event.key === 'ArrowLeft' || 
+               event.key === 'ArrowDown' ||
+               event.key === 'PageUp' ||
+               event.key === 'Escape' ||
+               event.key === 'p' || 
+               event.key === 'P') {
         if (currentSlide > 0 && currentSlide !== 1 && currentSlide !== 2 && currentSlide !== 6 && currentSlide !== 7) {
           prevSlide();
         }
@@ -72,7 +81,12 @@ function App() {
     }
   };
 
-  return <>{renderCurrentSlide()}</>;
+  return (
+    <>
+      {renderCurrentSlide()}
+      <ClickerInstructions />
+    </>
+  );
 }
 
 export default App;

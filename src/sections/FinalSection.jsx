@@ -123,6 +123,20 @@ const qrTextStyles = {
 };
 
 export const FinalSection = ({ onNextSlide, onPrevSlide }) => {
+  const handleClick = (event) => {
+    // Si se hace clic en la mitad derecha de la pantalla, avanza
+    // Si se hace clic en la mitad izquierda, retrocede
+    const rect = event.currentTarget.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const middleX = rect.width / 2;
+    
+    if (clickX > middleX) {
+      onNextSlide?.();
+    } else {
+      onPrevSlide?.();
+    }
+  };
+
   return (
     <motion.section
       style={sectionStyles}
@@ -130,6 +144,7 @@ export const FinalSection = ({ onNextSlide, onPrevSlide }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1, ease: 'easeInOut' }}
+      onClick={handleClick}
     >
       <LaserFlowBackground />
       
